@@ -14,10 +14,6 @@ h1 {
 	font-family: Fascinate;
 }
 
-h1 span {
-	/*font-family:;*/
-}
-
 h5:hover {
 	cursor: pointer;
 }
@@ -40,6 +36,7 @@ label:hover {
 	border-radius: 10%;
 	height: 225px;
 	cursor: pointer;
+	color: white;
 }
 
 .container {
@@ -59,6 +56,13 @@ label:hover {
 	padding: 2% 0%;
 }
 
+.nope {
+	color: red;
+	text-align: center;
+	text-shadow: 2px 2px black;
+	font-size: 2em;
+}
+
 .settings-container {
 	padding-top: 8px;
 }
@@ -72,4 +76,15 @@ label:hover {
 
 #difficulty-level {
 	margin-top: 10px !important;
+}
+
+#rgbValues {
+	text-shadow: 2px 2px black;
+}
+
+#win-text {
+	color: white;
+	text-align: center;
+	font-size: 4em;
+	text-shadow: 2px 2px black;
 }
