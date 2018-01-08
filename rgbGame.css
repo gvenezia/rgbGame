@@ -1,3 +1,8 @@
+html {
+	background-color: black;
+	height: 100%;
+}
+
 body {
 	font-family: Concert One;	
 	background-color: white;
@@ -13,6 +18,18 @@ h1 span {
 	/*font-family:;*/
 }
 
+h5:hover {
+	cursor: pointer;
+}
+
+label {
+	align-self: center;
+}
+
+label:hover {
+	cursor: pointer !important;
+}
+
 /* Classes ordered alphabetically */
 .btn {
 	font-family: Concert One;
@@ -22,7 +39,7 @@ h1 span {
 	border: 10px solid black;
 	border-radius: 10%;
 	height: 225px;
-	/*background-color: Something random*/
+	cursor: pointer;
 }
 
 .container {
@@ -39,9 +56,20 @@ h1 span {
 	color: white;
 	text-align: center;
 	background-color: royalblue;
-	padding: 5%;
+	padding: 2% 0%;
+}
+
+.settings-container {
+	padding-top: 8px;
 }
 
 .square-container {
-	background-color: lightgray;
+	padding-top: 20px;
+	background-color: black;
+}
+
+/* ID's ordered alphabetically */
+
+#difficulty-level {
+	margin-top: 10px !important;
 }
