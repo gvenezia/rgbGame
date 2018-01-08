@@ -8,7 +8,6 @@
 	var hard = document.querySelectorAll("label")[1];
 	var colorSquare = document.querySelectorAll(".color-square");
 	var winText = document.querySelector("#win-text");
-	var nope = document.querySelectorAll(".nope");
 	var message = document.querySelector("#message");
 
 	// Javascript variables
@@ -17,6 +16,11 @@
 	var correctSlot = 7;
 	var winningSquare = 0;
 
+	// Counters declared outside functions so they can be used
+	var k = 0
+
+// Make sure the page is loaded before affecting the page, 
+// do this only once to release memory
 window.addEventListener("load", function() {
 	
 
@@ -58,9 +62,6 @@ window.addEventListener("load", function() {
 	}
 
 	function clearNopes() {
-		// for (var i = 0; i < 6; i++){
-		// 	nope[i].innerText = "";
-		// }
 		message.innerText = "";
 	}
 
@@ -98,18 +99,17 @@ window.addEventListener("load", function() {
 			clearNopes();
 		}, {once: true});
 
-		// colorSquare[0].addEventListener("click", function() {
-		// 			nope[0].innerText = "Nope!";	
-		// 		}, {once: true});
-
 		// Add an Event listener to display "Nope" for incorrect guesses, skipping the correctSlot
-		for (var k = 0; k < numberSquares; k++) {
+		// In future versions, try changing the background back to black on "click"
+		// Does it need a closure? (e.g. a function wrapping the .addEventListener? )
+		for (k = 0; k < numberSquares; k++) {
 			if (k != correctSlot) {
 				colorSquare[k].addEventListener("click", function() {
-					message.innerText = "Nope!";	
+					message.innerText = "Nope!";
+					return colorSquare[k].style.backgroundColor = "black";	
 				}, {once: true});
 			}
-		}
-	}
+		} // End for loop
+	} // End randomizeColorSquares
 
 }, {once: true});

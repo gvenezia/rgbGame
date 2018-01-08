@@ -17,47 +17,50 @@
   </head>
 
   <body>
+  	<!-- Header container -->
   	<div class="container-fluid">
   		<div class="headers">
 	    <h1>The RGB Color Guessing Game!</h1>
 	    <h3>Try guessing which square below shows this value: <span id="rgbValues">rgb(250, 141, 23)</span></h3>
 	</div>
 
-	    <!-- Buttons for New colors and Easy and Hard settings -->
-	   	<div class="container settings-container">
-	   		<div class="row">
-		   		<div class="col-4 align-self-center">
-		   				<h5 id="newColors">New Colors</h5>
-		   		</div>
-		   		<div class="col-4 justify-content-center align-self-center">
-		   			<span id="message"></span>
-		   		</div>
-		   		<div id="difficulty-leel" class="col-4 btn-group justify-content-end" data-toggle="buttons">
-					<label class="btn btn-secondary active align-self-center">
-					    <input type="radio" name="options" id="option1" autocomplete="off" checked> EASY
-					</label>
-					<label class="btn btn-secondary">
-					    <input type="radio" name="options" id="option2" autocomplete="off"> HARD
-					</label>
-			   	</div>
+    <!-- Buttons for New colors and Easy and Hard settings -->
+   	<div class="container settings-container">
+   		<div class="row">
+	   		<div class="col-4 align-self-center">
+	   				<h5 id="newColors">New Colors</h5>
+	   		</div>
+	   		<div class="col-4 justify-content-center align-self-center">
+	   			<span id="message"></span>
+	   		</div>
+	   		<div id="difficulty-leel" class="col-4 btn-group justify-content-end" data-toggle="buttons">
+				<label class="btn btn-secondary active align-self-center">
+				    <input type="radio" name="options" id="option1" autocomplete="off" checked> EASY
+				</label>
+				<label class="btn btn-secondary">
+				    <input type="radio" name="options" id="option2" autocomplete="off"> HARD
+				</label>
 		   	</div>
-		</div>
+	   	</div>
+	</div>
 
-		<!-- Container for Color Squares -->
-		<div class="container-fluid square-container">
+	<!-- Container for Color Squares -->
+	<div class="container-fluid square-container">
 		<div class="container">
 			<div class="row">
-				<div id="sq1" class="col-4 color-square"><span class="nope"></span></div>
-				<div id="sq2" class="col-4 color-square"><span class="nope"></span><span id="win-text"></span></div>
-				<div id="sq3" class="col-4 color-square"><span class="nope"></span></div>
+				<div id="sq1" class="col-4 color-square"></div>
+				<div id="sq2" class="col-4 color-square"><span id="win-text"></span></div>
+				<div id="sq3" class="col-4 color-square"></span></div>
 			</div>
 			<div class="row">
-				<div id="sq4" class="col-4 color-square"><span class="nope"></span></div>
-				<div id="sq5" class="col-4 color-square"><span class="nope"></span></div>
-				<div id="sq6" class="col-4 color-square"><span class="nope"></span></div>
+				<div id="sq4" class="col-4 color-square"></span></div>
+				<div id="sq5" class="col-4 color-square"></span></div>
+				<div id="sq6" class="col-4 color-square"></span></div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Scripts -->
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

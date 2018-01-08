@@ -56,13 +56,6 @@ label:hover {
 	padding: 2% 0%;
 }
 
-.nope {
-	color: red;
-	text-align: center;
-	text-shadow: 2px 2px black;
-	font-size: 2em;
-}
-
 .settings-container {
 	padding-top: 8px;
 }
