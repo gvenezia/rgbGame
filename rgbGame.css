@@ -1,0 +1,35 @@
+body {
+	font-family: Concert One;	
+}
+
+h1 {
+	font-family: Fascinate;
+	color: white;
+	text-align: center;
+	background-color: royalblue;
+	padding: 5%;
+}
+
+h1 span {
+	font-family: Helvetica;
+}
+
+.container {
+	max-width: 700px;
+}
+
+.container-fluid {
+	padding: 0px;
+}
+
+.currentRGB {
+
+}
+
+.btn {
+	font-family: Concert One;
+}
+
+.squares-container {
+	background-color: lightgray;
+}

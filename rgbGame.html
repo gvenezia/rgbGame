@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>RGB Game</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Fascinate" rel="stylesheet">
+
+    <!-- Personal CSS -->
+    <link rel="stylesheet" type="text/css" href="rgbGame.css">
+  </head>
+
+  <body>
+  	<div class="container-fluid">
+	    <h1>The RGB<span id="values">(1234567890, 0, 0)</span> Game!</h1>
+
+	    <!-- Buttons for Easy and Hard settings -->
+	   	<div class="container">
+	   		<div class="row">
+		   		<div class="col-4 align-self-center">
+		   				<h5>New Colors</h5>
+		   		</div>
+		   		<div class="col-4 justify-content-center align-self-center">
+		   			<span id="message"></span>
+		   		</div>
+		   		<div class="col-4 btn-group justify-content-end align-self-center" data-toggle="buttons">
+					<label class="btn btn-secondary active">
+					    <input type="radio" name="options" id="option1" autocomplete="off" checked> EASY
+					</label>
+					<label class="btn btn-secondary">
+					    <input type="radio" name="options" id="option2" autocomplete="off"> HARD
+					</label>
+			   	</div>
+		   	</div>
+		</div>
+
+		<!-- Container for Color Squares -->
+		<div class="container squares-container">
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4"></div>
+				<div class="col-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4"></div>
+				<div class="col-4"></div>
+			</div>
+		</div>
+	</div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
