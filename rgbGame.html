@@ -18,13 +18,16 @@
 
   <body>
   	<div class="container-fluid">
-	    <h1>The RGB<span id="values">(1234567890, 0, 0)</span> Game!</h1>
+  		<div class="headers">
+	    <h1>The RGB Color Guessing Game!</h1>
+	    <h3>Try guessing which square below shows this value: <span id="rgbValues">rgb(250, 141, 23)</span></h3>
+	</div>
 
-	    <!-- Buttons for Easy and Hard settings -->
+	    <!-- Buttons for New colors and Easy and Hard settings -->
 	   	<div class="container">
 	   		<div class="row">
 		   		<div class="col-4 align-self-center">
-		   				<h5>New Colors</h5>
+		   				<h5 id="newColors">New Colors</h5>
 		   		</div>
 		   		<div class="col-4 justify-content-center align-self-center">
 		   			<span id="message"></span>
@@ -41,16 +44,17 @@
 		</div>
 
 		<!-- Container for Color Squares -->
-		<div class="container squares-container">
+		<div class="container-fluid square-container">
+		<div class="container">
 			<div class="row">
-				<div class="col-4"></div>
-				<div class="col-4"></div>
-				<div class="col-4"></div>
+				<div id="sq1" class="col-4 color-square"></div>
+				<div id="sq2" class="col-4 color-square"></div>
+				<div id="sq3" class="col-4 color-square"></div>
 			</div>
 			<div class="row">
-				<div class="col-4"></div>
-				<div class="col-4"></div>
-				<div class="col-4"></div>
+				<div id="sq4" class="col-4 color-square"></div>
+				<div id="sq5" class="col-4 color-square"></div>
+				<div id="sq6" class="col-4 color-square"></div>
 			</div>
 		</div>
 	</div>
@@ -58,5 +62,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Personal JS -->
+    <script type="text/javascript" src="rgbGame.js"></script>
   </body>
 </html>

@@ -1,17 +1,28 @@
 body {
 	font-family: Concert One;	
+	background-color: white;
 }
+
+/* the rest of the elements are listed alphabetically */
 
 h1 {
 	font-family: Fascinate;
-	color: white;
-	text-align: center;
-	background-color: royalblue;
-	padding: 5%;
 }
 
 h1 span {
-	font-family: Helvetica;
+	/*font-family:;*/
+}
+
+/* Classes ordered alphabetically */
+.btn {
+	font-family: Concert One;
+}
+
+.color-square {
+	border: 10px solid black;
+	border-radius: 10%;
+	height: 225px;
+	/*background-color: Something random*/
 }
 
 .container {
@@ -22,14 +33,15 @@ h1 span {
 	padding: 0px;
 }
 
-.currentRGB {
+/*.currentRGB {} */
 
+.headers {
+	color: white;
+	text-align: center;
+	background-color: royalblue;
+	padding: 5%;
 }
 
-.btn {
-	font-family: Concert One;
-}
-
-.squares-container {
+.square-container {
 	background-color: lightgray;
 }
