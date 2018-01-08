@@ -1,3 +1,5 @@
+// In future versions, add an average # of guesses before right. Store in a database
+
 // set values for html elements
 	var headers = document.querySelector(".headers");
 	var rgbValues = document.querySelector("#rgbValues");
@@ -7,6 +9,7 @@
 	var colorSquare = document.querySelectorAll(".color-square");
 	var winText = document.querySelector("#win-text");
 	var nope = document.querySelectorAll(".nope");
+	var message = document.querySelector("#message");
 
 	// Javascript variables
 	var numberSquares = 3;
@@ -55,9 +58,10 @@ window.addEventListener("load", function() {
 	}
 
 	function clearNopes() {
-		for (var i = 0; i < 6; i++){
-			nope[i].innerText = "";
-		}
+		// for (var i = 0; i < 6; i++){
+		// 	nope[i].innerText = "";
+		// }
+		message.innerText = "";
 	}
 
 	function randomizeColorSquares() {
@@ -91,16 +95,21 @@ window.addEventListener("load", function() {
 			headers.style.backgroundColor = correct;
 
 			winText.innerText = "You Win!";
+			clearNopes();
 		}, {once: true});
+
+		// colorSquare[0].addEventListener("click", function() {
+		// 			nope[0].innerText = "Nope!";	
+		// 		}, {once: true});
 
 		// Add an Event listener to display "Nope" for incorrect guesses, skipping the correctSlot
 		for (var k = 0; k < numberSquares; k++) {
 			if (k != correctSlot) {
 				colorSquare[k].addEventListener("click", function() {
-					nope[k].innerText = "Nope!";	
+					message.innerText = "Nope!";	
 				}, {once: true});
 			}
 		}
 	}
 
-});
+}, {once: true});

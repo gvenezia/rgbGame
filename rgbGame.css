@@ -78,6 +78,14 @@ label:hover {
 	margin-top: 10px !important;
 }
 
+#message {
+	color: maroon;
+	font-style: italic;
+	font-size: 1.5rem;
+	text-align: center;
+
+}
+
 #rgbValues {
 	text-shadow: 2px 2px black;
 }
