@@ -1,35 +1,29 @@
 // In future versions, add an average # of guesses before right. Store in a database
 
 // set values for html elements
-	var headers = document.querySelector(".headers");
-	var rgbValues = document.querySelector("#rgbValues");
-	var newColors = document.querySelector("#newColors");
-	var easy = document.querySelectorAll("label")[0];
-	var hard = document.querySelectorAll("label")[1];
-	var colorSquare = document.querySelectorAll(".color-square");
-	var winText = document.querySelector("#win-text");
-	var message = document.querySelector("#message");
+var headers = document.querySelector(".headers");
+var rgbValues = document.querySelector("#rgbValues");
+var newColors = document.querySelector("#newColors");
+var easy = document.querySelectorAll("label")[0];
+var hard = document.querySelectorAll("label")[1];
+var colorSquare = document.querySelectorAll(".color-square");
+var winText = document.querySelector("#win-text");
+var message = document.querySelector("#message");
 
-	// Javascript variables
-	var numberSquares = 3;
-	var correct = "";
-	var correctSlot = 7;
-	var winningSquare = 0;
-
-	// Counters declared outside functions so they can be used
-	var k = 0
+// Javascript variables
+var numberSquares = 3;
+var correct = "";
+var correctSlot = 7;
+var winningSquare = 0;
 
 // Make sure the page is loaded before affecting the page, 
 // do this only once to release memory
 window.addEventListener("load", function() {
-	
-
 	// Start by randomizing the board
 	randomizeColorSquares();
 
 	// Change the colors when clicking "New Colors"
 	newColors.addEventListener("click", function() {
-		clearNopes();
 		randomizeColorSquares();
 	});	
 
@@ -70,46 +64,60 @@ window.addEventListener("load", function() {
 		winText.innerText = "";
 		clearNopes();
 
-		// Get one new random RGB Value and assign it to "correct"
-		correct = randRGB();
-
-		// Assign it 
-		rgbValues.innerText = correct;
-
 		// Assign new random colors and clear nopes
 		for (var i = 0; i < numberSquares; i++){
 			colorSquare[i].style.backgroundColor = randRGB();
 		}
 
-		// Determine at which slot the correct rgb color will be placed, then overwrite that square;
+		// Determine which slot will be the correct rgb value
 		correctSlot = Math.floor(Math.random() * numberSquares);
-		colorSquare[parseInt(correctSlot)].style.backgroundColor = correct;
+		correct = colorSquare[parseInt(correctSlot)].style.backgroundColor;
 
-		// Now add an event listener to see if the user clicks the correct answer
+		// Dispaly in the header text
+		rgbValues.innerText = correct;
+
+		// Now add an event listener to see if the user clicks the correct answer, use only once, resetting for new colors
 		// This code didn't work outside of this function. Figure out why. Scope issues? Perhaps because the function isn't returning any value, the event 
 		// can't access to the values outside of the function? Then why do they show up in the console?
 		colorSquare[parseInt(correctSlot)].addEventListener("click", function() {
+			// Clear Nope!
+			clearNopes();
+
+			// Set all the squares to the correct color 
 			for (var j = 0; j < numberSquares; j++){
 				colorSquare[j].style.backgroundColor = correct;
 			}
 
+			// Set the header background to the correct color
 			headers.style.backgroundColor = correct;
 
+			// Tell the user they've won!
 			winText.innerText = "You Win!";
-			clearNopes();
 		}, {once: true});
 
 		// Add an Event listener to display "Nope" for incorrect guesses, skipping the correctSlot
-		// In future versions, try changing the background back to black on "click"
-		// Does it need a closure? (e.g. a function wrapping the .addEventListener? )
-		for (k = 0; k < numberSquares; k++) {
+		// for any wrong guesses, turn that colorSquare to black
+		for (var k = 0; k < numberSquares; k++) {
 			if (k != correctSlot) {
 				colorSquare[k].addEventListener("click", function() {
 					message.innerText = "Nope!";
-					return colorSquare[k].style.backgroundColor = "black";	
+					this.style.backgroundColor = "black";
 				}, {once: true});
 			}
 		} // End for loop
-	} // End randomizeColorSquares
+	} // End randomizeColorSquares()
 
-}, {once: true});
+}, {once: true}); // End "load" event listener
+
+
+// Does it need a closure? (e.g. a function wrapping the .addEventListener? )
+/* for (var k = 0; k < numberSquares; k++) {
+	colorSquare[k].addEventListener("click", function() {
+		alert("square" + k + "clicked"); 
+		message.innerText = "Nope!";
+		temp[k] = k;
+		colorSquare[temp[k]].style.backgroundColor = "white";	// 
+	});
+} // End for loop
+
+*/
