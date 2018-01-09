@@ -3,7 +3,7 @@
 // set values for html elements
 var headers = document.querySelector(".headers");
 var rgbValues = document.querySelector("#rgbValues");
-var newColors = document.querySelector("#newColors");
+var newColors = document.querySelector("#new-colors");
 var easy = document.querySelectorAll("label")[0];
 var hard = document.querySelectorAll("label")[1];
 var colorSquare = document.querySelectorAll(".color-square");

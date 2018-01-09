@@ -21,20 +21,20 @@
   	<div class="container-fluid">
   		<div class="headers">
 	    <h1>The RGB Color Guessing Game!</h1>
-	    <h3>Try guessing which square below shows this value: <span id="rgbValues">rgb(250, 141, 23)</span></h3>
+	    <h3>Try guessing which square below shows this value: <br><span id="rgbValues">rgb(250, 141, 23)</span></h3>
 	</div>
 
     <!-- Buttons for New colors and Easy and Hard settings -->
    	<div class="container settings-container">
    		<div class="row">
-	   		<div class="col-4 align-self-center">
-	   				<h5 id="newColors">New Colors</h5>
+	   		<div class="col-4 justify-content-start">
+   				<button id="new-colors" type="button" class="btn btn-success">NEW COLORS</button>
 	   		</div>
-	   		<div class="col-4 justify-content-center align-self-center">
+	   		<div id="message-div" class="col-4 justify-content-center ">
 	   			<span id="message"></span>
 	   		</div>
-	   		<div id="difficulty-leel" class="col-4 btn-group justify-content-end" data-toggle="buttons">
-				<label class="btn btn-secondary active align-self-center">
+	   		<div class="col-4 btn-group justify-content-end align-self-center" data-toggle="buttons">
+				<label class="btn btn-secondary active">
 				    <input type="radio" name="options" id="option1" autocomplete="off" checked> EASY
 				</label>
 				<label class="btn btn-secondary">

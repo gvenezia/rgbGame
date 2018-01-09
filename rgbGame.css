@@ -8,27 +8,19 @@ body {
 	background-color: white;
 }
 
-/* the rest of the elements are listed alphabetically */
-
 h1 {
 	font-family: Fascinate;
-}
-
-h5:hover {
-	cursor: pointer;
-}
-
-label {
-	align-self: center;
-}
-
-label:hover {
-	cursor: pointer !important;
 }
 
 /* Classes ordered alphabetically */
 .btn {
 	font-family: Concert One;
+	font-size:;
+	padding-top: 8px;
+}
+
+.btn:hover {
+	cursor: pointer;
 }
 
 .color-square {
@@ -47,12 +39,10 @@ label:hover {
 	padding: 0px;
 }
 
-/*.currentRGB {} */
-
 .headers {
 	color: white;
 	text-align: center;
-	background-color: royalblue;
+	background-color: royalblue; 
 	padding: 2% 0%;
 }
 
@@ -66,21 +56,19 @@ label:hover {
 }
 
 /* ID's ordered alphabetically */
-
-#difficulty-level {
-	margin-top: 10px !important;
-}
-
 #message {
 	color: maroon;
 	font-style: italic;
 	font-size: 1.5rem;
-	text-align: center;
+}
 
+#message-div {
+	text-align:center;
+	margin-left: -10px;
 }
 
 #rgbValues {
-	text-shadow: 2px 2px black;
+	text-shadow: 3px 3px black;
 }
 
 #win-text {
@@ -88,4 +76,31 @@ label:hover {
 	text-align: center;
 	font-size: 4em;
 	text-shadow: 2px 2px black;
+}
+
+/* change the color square size and inner text to make it responsive */
+@media (max-width: 770px) {
+	.color-square {
+		height: 170px;
+	}
+
+	#win-text {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.color-square {
+		height: 140px;
+	}
+
+	#win-text {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.color-square {
+		height: 100px;
+	}
 }
