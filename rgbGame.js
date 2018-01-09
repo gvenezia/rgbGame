@@ -15,6 +15,7 @@ var numberSquares = 3;
 var correct = "";
 var correctSlot = 7;
 var winningSquare = 0;
+var won = false;
 
 // Make sure the page is loaded before affecting the page, 
 // do this only once to release memory
@@ -27,11 +28,12 @@ window.addEventListener("load", function() {
 		randomizeColorSquares();
 	});	
 
-	// Change number of squares and reset colors when changing the difficulty setting
+// Change number of squares and reset colors when changing the difficulty setting
+	// For the easy setting, use 3 squares, and clear the rest
 	easy.addEventListener("click", function() {
 		numberSquares = 3;
 
-		// Clear the extra squares back to black, get rid of text
+		// Clear the extra squares back to black
 		for (var i = 3; i < 6; i++) {
 			colorSquare[i].style.backgroundColor = "black";
 		}
@@ -39,6 +41,7 @@ window.addEventListener("load", function() {
 		randomizeColorSquares();
 	});
 
+	// For the hard setting
 	hard.addEventListener("click", function() {
 		numberSquares = 6;
 		randomizeColorSquares();
@@ -76,34 +79,32 @@ window.addEventListener("load", function() {
 		// Dispaly in the header text
 		rgbValues.innerText = correct;
 
-		// Now add an event listener to see if the user clicks the correct answer, use only once, resetting for new colors
-		// This code didn't work outside of this function. Figure out why. Scope issues? Perhaps because the function isn't returning any value, the event 
-		// can't access to the values outside of the function? Then why do they show up in the console?
-		colorSquare[parseInt(correctSlot)].addEventListener("click", function() {
-			// Clear Nope!
-			clearNopes();
-
-			// Set all the squares to the correct color 
-			for (var j = 0; j < numberSquares; j++){
-				colorSquare[j].style.backgroundColor = correct;
-			}
-
-			// Set the header background to the correct color
-			headers.style.backgroundColor = correct;
-
-			// Tell the user they've won!
-			winText.innerText = "You Win!";
-		}, {once: true});
-
-		// Add an Event listener to display "Nope" for incorrect guesses, skipping the correctSlot
-		// for any wrong guesses, turn that colorSquare to black
+		// Add an Event listener to each colorSquare
 		for (var k = 0; k < numberSquares; k++) {
-			if (k != correctSlot) {
-				colorSquare[k].addEventListener("click", function() {
+			colorSquare[k].addEventListener("click", function() {
+				// for incorrect guesses, display "Nope" and change background to black
+				if (this.style.backgroundColor != correct) {
 					message.innerText = "Nope!";
 					this.style.backgroundColor = "black";
-				}, {once: true});
-			}
+				} else { 
+				// if the user clicks the correct answer then...
+					// Clear Nope!
+					clearNopes();
+
+					// Set all the remaining squares to the correct color 
+					for (var j = 0; j < numberSquares; j++){
+						if (colorSquare[j].style.backgroundColor != "black") {
+							colorSquare[j].style.backgroundColor = correct;
+						}
+					}
+
+					// Set the header background to the correct color
+					headers.style.backgroundColor = correct;
+
+					// Tell the user they've won!
+					winText.innerText = "You Win!";
+				}
+			}, {once: true});
 		} // End for loop
 	} // End randomizeColorSquares()
 
