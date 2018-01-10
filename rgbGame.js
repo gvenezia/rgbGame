@@ -28,7 +28,7 @@ window.addEventListener("load", function() {
 		randomizeColorSquares();
 	});	
 
-// Change number of squares and reset colors when changing the difficulty setting
+	// Change number of squares and reset colors when changing the difficulty setting
 	// For the easy setting, use 3 squares, and clear the rest
 	easy.addEventListener("click", function() {
 		numberSquares = 3;
@@ -48,14 +48,14 @@ window.addEventListener("load", function() {
 	});
 
 	// Functions
-	function rand255() {
-		return Math.floor(Math.random() * 255);
+	function rand256() {
+		return Math.floor(Math.random() * 256);
 	}
 
 	function randRGB() {
-		return "rgb(" + rand255() + ", " +
-						rand255() + ", " +
-						rand255() + ")" ;
+		return "rgb(" + rand256() + ", " +
+						rand256() + ", " +
+						rand256() + ")" ;
 	}
 
 	function clearNopes() {
