@@ -1,3 +1,6 @@
+;(function (){
+	'use strict'
+
 // In future versions, add an average # of guesses before right. Store in a database
 
 // set values for html elements
@@ -34,28 +37,28 @@ window.addEventListener("load", function() {
 		numberSquares = 3;
 
 		// Clear the extra squares back to black
-		for (var i = 3; i < 6; i++) {
+		for (let i = 3; i < 6; i++) {
 			colorSquare[i].style.backgroundColor = "black";
 		}
 
 		randomizeColorSquares();
 	});
 
-	// For the hard setting
+	// For the hard setting, use 6 squares
 	hard.addEventListener("click", function() {
 		numberSquares = 6;
 		randomizeColorSquares();
 	});
 
-	// Functions
-	function rand256() {
+	// Randomizer Functions
+	function rand255() {
 		return Math.floor(Math.random() * 256);
 	}
 
 	function randRGB() {
-		return "rgb(" + rand256() + ", " +
-						rand256() + ", " +
-						rand256() + ")" ;
+		return "rgb(" + rand255() + ", " +
+						rand255() + ", " +
+						rand255() + ")" ;
 	}
 
 	function clearNopes() {
@@ -68,7 +71,7 @@ window.addEventListener("load", function() {
 		clearNopes();
 
 		// Assign new random colors and clear nopes
-		for (var i = 0; i < numberSquares; i++){
+		for (let i = 0; i < numberSquares; i++){
 			colorSquare[i].style.backgroundColor = randRGB();
 		}
 
@@ -80,7 +83,7 @@ window.addEventListener("load", function() {
 		rgbValues.innerText = correct;
 
 		// Add an Event listener to each colorSquare
-		for (var k = 0; k < numberSquares; k++) {
+		for (let k = 0; k < numberSquares; k++) {
 			colorSquare[k].addEventListener("click", function() {
 				// for incorrect guesses, display "Nope" and change background to black
 				if (this.style.backgroundColor != correct) {
@@ -92,7 +95,7 @@ window.addEventListener("load", function() {
 					clearNopes();
 
 					// Set all the remaining squares to the correct color 
-					for (var j = 0; j < numberSquares; j++){
+					for (let j = 0; j < numberSquares; j++){
 						if (colorSquare[j].style.backgroundColor != "black") {
 							colorSquare[j].style.backgroundColor = correct;
 						}
@@ -110,15 +113,4 @@ window.addEventListener("load", function() {
 
 }, {once: true}); // End "load" event listener
 
-
-// Does it need a closure? (e.g. a function wrapping the .addEventListener? )
-/* for (var k = 0; k < numberSquares; k++) {
-	colorSquare[k].addEventListener("click", function() {
-		alert("square" + k + "clicked"); 
-		message.innerText = "Nope!";
-		temp[k] = k;
-		colorSquare[temp[k]].style.backgroundColor = "white";	// 
-	});
-} // End for loop
-
-*/
+}())
