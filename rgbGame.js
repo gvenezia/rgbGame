@@ -1,39 +1,42 @@
-;(function (){
-	'use strict'
-
 // In future versions, add an average # of guesses before right. Store in a database
 
+;
+(function IIFE(){
+	'use strict'
+
+// =================== Variables ======================
 // set values for html elements
-var headers = document.querySelector(".headers");
-var rgbValues = document.querySelector("#rgbValues");
-var newColors = document.querySelector("#new-colors");
-var easy = document.querySelectorAll("label")[0];
-var hard = document.querySelectorAll("label")[1];
-var colorSquare = document.querySelectorAll(".color-square");
-var winText = document.querySelector("#win-text");
-var message = document.querySelector("#message");
+var headers 	= document.querySelector(".headers"),
+	rgbValues 	= document.querySelector("#rgbValues"),
+	newColors 	= document.querySelector("#new-colors"),
+ 	easy 		= document.querySelectorAll("label")[0],
+ 	hard 		= document.querySelectorAll("label")[1],
+ 	colorSquare = document.querySelectorAll(".color-square"),
+ 	winText 	= document.querySelector("#win-text"),
+	message 	= document.querySelector("#message");
 
-// Javascript variables
-var numberSquares = 3;
-var correct = "";
-var correctSlot = 7;
-var winningSquare = 0;
-var won = false;
+// Javascript variables, default values
+var numberSquares 	= 3,
+	correct 		= "",
+	correctSlot 	= 7,
+	winningSquare 	= 0,
+	won 			= false;
 
-// Make sure the page is loaded before affecting the page, 
+// =================== On Page Load ====================== 
 // do this only once to release memory
-window.addEventListener("load", function() {
+window.addEventListener("load", function runJavascriptOnLoad() {
 	// Start by randomizing the board
 	randomizeColorSquares();
 
+	// =================== Event Listeners ======================
 	// Change the colors when clicking "New Colors"
-	newColors.addEventListener("click", function() {
+	newColors.addEventListener("click", function addNewColorsEvent() {
 		randomizeColorSquares();
 	});	
 
 	// Change number of squares and reset colors when changing the difficulty setting
 	// For the easy setting, use 3 squares, and clear the rest
-	easy.addEventListener("click", function() {
+	easy.addEventListener("click", function addEasySettingEvent() {
 		numberSquares = 3;
 
 		// Clear the extra squares back to black
@@ -45,11 +48,12 @@ window.addEventListener("load", function() {
 	});
 
 	// For the hard setting, use 6 squares
-	hard.addEventListener("click", function() {
+	hard.addEventListener("click", function addHardSettingEvent() {
 		numberSquares = 6;
 		randomizeColorSquares();
 	});
 
+	// ====================== Functions ==========================
 	// Randomizer Functions
 	function rand255() {
 		return Math.floor(Math.random() * 256);
@@ -84,7 +88,7 @@ window.addEventListener("load", function() {
 
 		// Add an Event listener to each colorSquare
 		for (let k = 0; k < numberSquares; k++) {
-			colorSquare[k].addEventListener("click", function() {
+			colorSquare[k].addEventListener("click", function addColorSquareClickEvent() {
 				// for incorrect guesses, display "Nope" and change background to black
 				if (this.style.backgroundColor != correct) {
 					message.innerText = "Nope!";
@@ -113,4 +117,4 @@ window.addEventListener("load", function() {
 
 }, {once: true}); // End "load" event listener
 
-}())
+})();
