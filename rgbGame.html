@@ -6,25 +6,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- CDN: Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Concert+One|Baloo+Tammudu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One%7CBaloo+Tammudu" rel="stylesheet">
 
     <!-- Personal CSS -->
-    <link rel="stylesheet" type="text/css" href="rgbGame.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/rgbGame.css">
   </head>
 
   <body>
   	<!-- Header container -->
   	<div class="container-fluid">
   		<div class="headers">
-	    <h1>The RGB Color Guessing Game!</h1>
-	    <h3>Try guessing which square below shows this value: 
-	    	<br>
-	    	<span id="rgbValues">rgb(250, 141, 23)</span>
-	    </h3>
+		    <h1>The RGB Color Guessing Game!</h1>
+		    <h3>Try guessing which square below shows this value: 
+		    	<br>
+		    	<span id="rgbValues">rgb(250, 141, 23)</span>
+		    </h3>
+		</div>
 	</div>
 
     <!-- Buttons for New colors and Easy and Hard settings -->
@@ -38,10 +39,10 @@
 	   		</div>
 	   		<div class="col-4 btn-group justify-content-end align-self-center" data-toggle="buttons">
 				<label class="btn btn-secondary active">
-				    <input type="radio" name="options" id="option1" autocomplete="off" checked> EASY
+				    <input type="radio" name="options" id="option1" checked> EASY
 				</label>
 				<label class="btn btn-secondary">
-				    <input type="radio" name="options" id="option2" autocomplete="off"> HARD
+				    <input type="radio" name="options" id="option2"> HARD
 				</label>
 		   	</div>
 	   	</div>
@@ -53,12 +54,12 @@
 			<div class="row">
 				<div id="sq1" class="col-4 color-square"></div>
 				<div id="sq2" class="col-4 color-square"><span id="win-text"></span></div>
-				<div id="sq3" class="col-4 color-square"></span></div>
+				<div id="sq3" class="col-4 color-square"></div>
 			</div>
 			<div class="row">
-				<div id="sq4" class="col-4 color-square"></span></div>
-				<div id="sq5" class="col-4 color-square"></span></div>
-				<div id="sq6" class="col-4 color-square"></span></div>
+				<div id="sq4" class="col-4 color-square"></div>
+				<div id="sq5" class="col-4 color-square"></div>
+				<div id="sq6" class="col-4 color-square"></div>
 			</div>
 		</div>
 	</div>
@@ -70,6 +71,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
     <!-- Personal JS -->
-    <script type="text/javascript" src="rgbGame.js"></script>
+    <script src="assets/js/rgbGame.js"></script>
   </body>
 </html>
