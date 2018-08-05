@@ -110,4 +110,4 @@
 			randomizeColorSquares();
 		});
 	}, {once: true}); // End "load" event listener
-})();
+}());
